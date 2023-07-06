@@ -1,4 +1,4 @@
-name: "📺 BiliBili: 🛡️ ADBlock"
+name: "My 📺 BiliBili: 🛡️ ADBlock"
 desc: "哔哩哔哩：去广告"
 openUrl: "http://boxjs.com/#/app/BiliBili.ADBlock"
 author: "ClydeTime"
@@ -19,9 +19,7 @@ http:
     - "grpc.biliapi.net"
   url-rewrite:
     # 去除搜索中的默认关键词
-    # - ^https?:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords$ - reject
     # 去除搜索中的大家都在搜
-    # - ^https?:\/\/api\.vc\.bilibili\.com\/search_svr\/v\d\/Search\/recommend_words - reject-dict
     # 去除动态中的话题
     - ^https?:\/\/api\.vc\.bilibili\.com\/topic_svr\/v1\/topic_svr - reject-dict
     # 去除动态中的最常访问
