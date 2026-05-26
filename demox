@@ -1,0 +1,43 @@
+[general]
+
+dns_exclusion_list = *.cmpassport.com, *.jegotrip.com.cn, *.icitymobile.mobi, id6.me
+
+[dns]
+
+no-ipv6
+server = 223.5.5.5
+server = 119.29.29.29
+
+[policy]
+static=Global, proxy
+static=Apple, direct, proxy, reject
+static=OpenAI, proxy
+static=Telegram, 🇭🇰 香港实验性 IEPL 专线 1, 🇺🇸 美国实验性 IEPL 专线 1, direct, proxy, reject
+
+[server_remote]
+
+[filter_remote]
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Apple/Apple.list, tag=Apple, force-policy=Apple, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/OpenAI/OpenAI.list, tag=OpenAI, force-policy=OpenAI, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Telegram/Telegram.list, tag=Telegram, force-policy=Telegram, update-interval=172800, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/Proxy/Proxy.list, tag=Global, force-policy=Global, update-interval=172800, opt-parser=false, enabled=true
+FILTER_REGION, tag=CN, force-policy=direct, update-interval=172800, opt-parser=false, inserted-resource=true, enabled=true
+FILTER_LAN, tag=LAN, force-policy=direct, update-interval=172800, opt-parser=false, inserted-resource=true, enabled=true
+
+[rewrite_remote]
+
+[server_local]
+
+[filter_local]
+
+#geoip, cn, direct
+final, proxy
+
+[rewrite_local]
+
+[task_local]
+
+[http_backend]
+
+[mitm]
+
